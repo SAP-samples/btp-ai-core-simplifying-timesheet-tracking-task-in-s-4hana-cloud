@@ -58,9 +58,9 @@ modules:
       supported-platforms:
         []
 
-# ------------------ DESTINATION CONTENT ----------------------
+  # ------------------ DESTINATION CONTENT ----------------------
   - name: timesheet-destination-content
-# ------------------------------------------------------------
+    # ------------------------------------------------------------
     type: com.sap.application.content
     requires:
       - name: timesheet-destination
@@ -111,6 +111,7 @@ modules:
           url: ~{srv-url}
           forwardAuthToken: true
       - name: timesheet-auth
+      - name: timesheet-destination
 resources:
   - name: timesheet-auth
     type: org.cloudfoundry.managed-service

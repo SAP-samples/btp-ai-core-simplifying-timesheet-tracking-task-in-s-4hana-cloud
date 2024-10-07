@@ -1,0 +1,25 @@
+### Get user call
+POST http://localhost:4004/timesheet-processor/getUser
+Content-Type: application/json
+
+{
+    "EmployeeEmail": "US55@my300856.s4hana.ondemand.com"
+}
+
+### Get time record
+POST http://localhost:4004/timesheet-processor/getTimeRecord
+Content-Type: application/json
+
+{
+  "EmployeeID": "50000058",
+  "StartDate": "2024-06-30T01:13:10.780",
+  "EndDate": "2024-10-06T01:13:10.780"
+}
+
+### Get project element
+POST http://localhost:4004/timesheet-processor/getProjectElement
+Content-Type: application/json
+
+{
+  "EmployeeID": "50000058"
+}

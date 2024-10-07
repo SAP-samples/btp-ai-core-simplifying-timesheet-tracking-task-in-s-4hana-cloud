@@ -26,11 +26,11 @@ sap.ui.define([
               var userEmail = "";
               var oModel = new JSONModel();
               var mock = {
-                  firstname: "Dummy",
-                  lastname: "User",
-                  email: "rui.jin@sap.com",
-                  name: "dummy.user@com",
-                  displayName: "Dummy User (dummy.user@com)"
+                  firstname: "Brett",
+                  lastname: "Neil",
+                  email: "US55@my300856.s4hana.ondemand.com",
+                  name: "Brett Neil",
+                  displayName: "Brett Neil (US55@my300856.s4hana.ondemand.com)"
               }; 
               oModel.loadData(url);
               await oModel.dataLoaded()
@@ -51,8 +51,9 @@ sap.ui.define([
               userEmail = oModel.getData().email;
 
               var personID = await $.ajax({
-                url: this.getBaseURL()+`/timesheet-processor/getUser`,
-                // url: `/timesheet-processor/getUser`,
+                // live url for use with AppRouter
+                // url: this.getBaseURL()+`/timesheet-processor/getUser`,
+                url: `/timesheet-processor/getUser`,
                 type: "POST",
                 contentType: "application/json",
                 async: true,
@@ -105,8 +106,8 @@ sap.ui.define([
 
               const currentView = this.getView();
               $.ajax({
-                url: this.getBaseURL()+`/timesheet-processor/getProjectElement`,
-                // url: `/timesheet-processor/getProjectElement`,
+                // url: this.getBaseURL()+`/timesheet-processor/getProjectElement`,
+                url: `/timesheet-processor/getProjectElement`,
                 type: "POST",
                 contentType: "application/json",
                 async: true,
@@ -220,8 +221,8 @@ sap.ui.define([
                         "activity_type":this._activityType
                     };
                   const chatResponse = await $.ajax({
-                    url: this.getBaseURL()+`/chat-processor/getChatResponse`,
-                    // url: `/chat-processor/getChatResponse`,
+                    // url: this.getBaseURL()+`/chat-processor/getChatResponse`,
+                    url: `/chat-processor/getChatResponse`,
                     type: "POST",
                     contentType: "application/json",
                     async: true,
@@ -252,12 +253,13 @@ sap.ui.define([
                     },
                   });
 
-                  //console.log("Get Chat Response Success!",chatResponse);
+                  console.log("Get Chat Response Success!",chatResponse.content);
 
                   try {
                     JSON.parse(chatResponse.content);
+                    console.log("in Try");
                   } catch (error) {
-                    //console.log("in Catch");
+                    console.log("in Catch: ", error.message);
                     oEntryBot = {
                       cID_cID:chatResponse.cID_cID,
                       mID:chatResponse.mID,
@@ -278,8 +280,8 @@ sap.ui.define([
                   }
 
                   var createTimeRecord = await $.ajax({
-                    url: this.getBaseURL()+`/timesheet-processor/createTimeRecord`,
-                    // url: `/timesheet-processor/createTimeRecord`,
+                    // url: this.getBaseURL()+`/timesheet-processor/createTimeRecord`,
+                    url: `/timesheet-processor/createTimeRecord`,
                     type: "POST",
                     contentType: "application/json",
                     async: true,
