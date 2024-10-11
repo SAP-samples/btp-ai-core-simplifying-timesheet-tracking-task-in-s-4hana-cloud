@@ -1,0 +1,7 @@
+{
+  "srv/external/API_MANAGE_WORKFORCE_TIMESHEET.edmx": {
+    "packageName": "api_manage_workforce_timesheet",
+    "directoryName": "API_MANAGE_WORKFORCE_TIMESHEET",
+    "basePath": "/sap/opu/odata/sap/API_MANAGE_WORKFORCE_TIMESHEET"
+  }
+}

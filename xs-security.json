@@ -1,17 +1,20 @@
 {
   "scopes": [],
-  "attributes": [     
-    { 
-      "name" : "Country", 
-      "description" : "Country", 
-      "valueType" : "s" }, 
+  "attributes": [
     {
-      "name" : "CostCenter", 
-      "description" : "CostCenter", 
-      "valueType" : "string" 
-    } 
+      "name": "Country",
+      "description": "Country",
+      "valueType": "s"
+    },
+    {
+      "name": "CostCenter",
+      "description": "CostCenter",
+      "valueType": "string"
+    }
   ],
   "role-templates": [],
   "authorities-inheritance": false,
-  "foreign-scope-references": ["user_attributes"]
+  "foreign-scope-references": [
+    "user_attributes"
+  ]
 }
